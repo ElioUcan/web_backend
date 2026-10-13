@@ -1,17 +1,16 @@
 #!/usr/bin/env python3
-
-"""Imported differen coroutines"""
+"""Task wait_n module"""
 
 import asyncio
 
-wait_random = __import__("0-basic_async_syntax").wait_random
+task_wait_random = __import__("3-tasks").task_wait_random
 
 
-async def task_wait_n(n: int, max_delay: int) -> asyncio.Task:
-    """coroutines function"""
-    tasks = [wait_random(max_delay) for _ in range(n)]
+async def task_wait_n(n: int, max_delay: int) -> list[float]:
+    """Execute task_wait_random n times with the specified max_delay"""
+    tasks = [task_wait_random(max_delay) for _ in range(n)]
     delays = []
     for task in asyncio.as_completed(tasks):
         delay = await task
         delays.append(delay)
-    return asyncio.creat_task(delays)
+    return delays
