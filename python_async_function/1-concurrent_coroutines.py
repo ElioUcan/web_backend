@@ -4,11 +4,11 @@
 
 
 import asyncio
-from 0-basic_async_syntax import wait_random
+wait_random =__import__('0-basic_async_syntax').wait_random
 
 async def wait_n(n: int, max_delay: int):
     """coroutines function"""
-    task = [wait_random(max_delay) for _ in range(n)]
+    tasks = [wait_random(max_delay) for _ in range(n)]
     delays = []
     for task in asyncio.as_completed(tasks):
         delay = await task
