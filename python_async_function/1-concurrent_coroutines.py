@@ -6,7 +6,7 @@
 import asyncio
 from 0-basic_async_syntax import wait_random
 
-async def wait_n(n: int, max_delay: int) -> list:
+async def wait_n(n: int, max_delay: int):
     """coroutines function"""
     task = [wait_random(max_delay) for _ in range(n)]
     delays = []
