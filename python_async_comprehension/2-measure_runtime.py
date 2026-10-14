@@ -10,6 +10,6 @@ import asyncio
 async def measure_time() -> float:
     start = time.time()
     await asyncio.gather(*(async_comprehension() for _ in range(4)))
-    end = time.perf_counter()
+    end = time.time()
     return start - end
 
