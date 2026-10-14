@@ -12,4 +12,3 @@ async def measure_time() -> float:
     await asyncio.gather(*(async_comprehension() for _ in range(4)))
     end = time.time()
     return start - end
-
